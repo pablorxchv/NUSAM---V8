@@ -266,7 +266,7 @@ const users = [
     {
         username: 'estagiario',
         password: 'estagio123',
-        nome: 'Lucas Oliveira',
+        nome: 'Pablo Rocha',
         perfil: 'Estagiário'
     }
 ];
