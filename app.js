@@ -305,7 +305,7 @@ const systemOptions = {
         'Estável',
         'Em recuperação',
         'Faltoso',
-        'Encaminhado para CAPS'
+        'Encaminhado para Hospital de Referência'
     ]
 };
 
@@ -880,7 +880,7 @@ function renderPatientsList() {
             'Melhora significativa': 'success',
             'Alta terapêutica': 'success',
             'Faltoso': 'warning',
-            'Encaminhado para CAPS': 'error'
+            'Encaminhado para Hospital de Referência': 'error'
         }[patient.status] || 'info';
         
         return `
@@ -1116,7 +1116,7 @@ function showPatientDetail(patientId) {
         'Melhora significativa': 'success',
         'Alta terapêutica': 'success',
         'Faltoso': 'warning',
-        'Encaminhado para CAPS': 'error'
+        'Encaminhado para Hospital de Referência': 'error'
     }[patient.status] || 'info';
     
     const patientDocuments = documents.filter(d => d.patientId === patientId);
