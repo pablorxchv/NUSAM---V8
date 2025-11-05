@@ -288,30 +288,16 @@ let unitSettings = {
 // Opções do sistema com dados reais de Alcântaras/CE
 const systemOptions = {
     postosSaude: [
-        'ROSAPOLES',
         'FRANCISCO MACHADO ALCANTARA',
         'DOUTOR SHIGUEO NAKAMURA',
         'JOAQUIM XIMENES CARVALHO',
         'HOSPITAL ANTONIO ROCHA FREIRE',
-        'CEA FRANCISCA LINHARES LUSTOSA XIMENES',
         'SITIO SAQUINHO',
-        'RAIMUNDO NONATO DE ALBUQUERQUE',
+        'RAIMUNDO NONATO - Carmolândia',
         'VEREADOR JOSE REINALDO',
-        'BOMFIM'
+        'RAIMUNDO NONATO - Bonfim'
     ],
-    areasAbrangencia: [
-        'Área 1 - ROSAPOLES',
-        'Área 2 - FRANCISCO MACHADO ALCANTARA',
-        'Área 3 - DOUTOR SHIGUEO NAKAMURA',
-        'Área 4 - JOAQUIM XIMENES CARVALHO',
-        'Área 5 - HOSPITAL ANTONIO ROCHA FREIRE',
-        'Área 6 - CEA FRANCISCA LINHARES LUSTOSA XIMENES',
-        'Área 7 - SITIO SAQUINHO',
-        'Área 8 - RAIMUNDO NONATO DE ALBUQUERQUE',
-        'Área 9 - VEREADOR JOSE REINALDO',
-        'Área 10 - BOMFIM'
-    ],
-
+    
     statusAcompanhamento: [
         'Em acompanhamento',
         'Melhora significativa',
@@ -1017,7 +1003,6 @@ function savePatient(event) {
         telefone: formatPhone(document.getElementById('patientTelefone').value),
         endereco: document.getElementById('patientEndereco').value,
         posto_saude: document.getElementById('patientPostoSaude').value,
-        area_abrangencia: document.getElementById('patientAreaAbrangencia').value,
         acs_responsavel: document.getElementById('patientAcsResponsavel').value.trim(),
         queixa_principal: document.getElementById('patientQueixaPrincipal').value,
         historico_familiar: document.getElementById('patientHistoricoFamiliar').value,
@@ -1098,7 +1083,6 @@ function editPatient(patientId) {
     document.getElementById('patientTelefone').value = patient.telefone;
     document.getElementById('patientEndereco').value = patient.endereco;
     document.getElementById('patientPostoSaude').value = patient.posto_saude;
-    document.getElementById('patientAreaAbrangencia').value = patient.area_abrangencia;
     document.getElementById('patientAcsResponsavel').value = patient.acs_responsavel;
     document.getElementById('patientQueixaPrincipal').value = patient.queixa_principal;
     document.getElementById('patientHistoricoFamiliar').value = patient.historico_familiar;
@@ -1170,10 +1154,6 @@ function showPatientDetail(patientId) {
                 <div class="detail-item">
                     <strong>Posto de Saúde:</strong>
                     <span>${patient.posto_saude}</span>
-                </div>
-                <div class="detail-item">
-                    <strong>Área de Abrangência:</strong>
-                    <span>${patient.area_abrangencia}</span>
                 </div>
                 <div class="detail-item">
                     <strong>ACS Responsável:</strong>
@@ -1953,10 +1933,6 @@ function generatePatientReport(patientId) {
                         <span>${patient.posto_saude}</span>
                     </div>
                     <div class="report-info-item">
-                        <strong>Área de Abrangência</strong>
-                        <span>${patient.area_abrangencia}</span>
-                    </div>
-                    <div class="report-info-item">
                         <strong>ACS Responsável</strong>
                         <span>${patient.acs_responsavel}</span>
                     </div>
@@ -2061,7 +2037,6 @@ function generateTextReport(patient) {
         `INFORMAÇÕES DO SUS\n` +
         `-`.repeat(20) + `\n` +
         `Posto de Saúde: ${patient.posto_saude}\n` +
-        `Área de Abrangência: ${patient.area_abrangencia}\n` +
         `ACS Responsável: ${patient.acs_responsavel}\n` +
         `Status: ${patient.status}\n` +
         `Data de Cadastro: ${formatDate(patient.data_cadastro)}\n\n` +
